@@ -1,6 +1,6 @@
 # Google-Books-Search
 
-![GitHub](https://img.shields.io/github/license/MikeColetta/React-Portfolio)
+![GitHub](https://img.shields.io/github/license/MikeColetta/Google-Books-Search)
 
 ## Project Description
 
