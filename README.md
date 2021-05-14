@@ -1,4 +1,4 @@
-# Google-Books-Search
+# React-Google-Books-Search
 
 ![GitHub](https://img.shields.io/github/license/MikeColetta/Google-Books-Search)
 
