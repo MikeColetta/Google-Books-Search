@@ -6,14 +6,17 @@ function SearchForm(props) {
             <div className=" card mb-3">
                 <form className="form-inline">
                     <input
-                        value={props.value}
+                        value={props.search}
                         onChange={props.handleInputChange}
-                        type="search"
+                        name="search"
+                        type="text"
                         className="form-control mt-2"
-                        id="searchInput"
+                        id="search"
                         placeholder="Search for a book!">
                     </input>
-                    <button className="btn btn-primary">Search</button>
+                    <button onClick={props.handleFormSubmit} className="btn btn-primary">
+                        Search
+                        </button>
                 </form>
             </div>
         </div>

@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import SavedBooks from '../components/SavedBooks';
 
-function Saved() {
+class Saved extends React.Component {
+    render() {
     return (
         <div>
             <Jumbotron />
             <SavedBooks />
         </div>
     )
+    }
 }
 
 export default Saved;
