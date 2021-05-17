@@ -62,7 +62,8 @@ class Search extends React.Component {
                                         <h5 className="card-title">{result.title} by {result.authors}</h5>
                                         <p className="card-text">{result.description}</p>
                                         <div>
-                                            <a href={result.link} className="btn badge-pill btn-outline-dark mt-3" target="_blank" rel="noopener noreferrer" >More</a>
+                                            <a href={result.link} className="btn btn-primary btn-outline-dark mt-3" target="_blank" rel="noopener noreferrer" >More</a>
+                                            <button href={result.link} className="btn btn-success btn-outline-dark mt-3 ml-3" target="_blank" rel="noopener noreferrer" >Save</button>
                                         </div>
                                     </div>
                                 </div>

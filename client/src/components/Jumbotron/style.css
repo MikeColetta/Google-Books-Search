@@ -1,0 +1,7 @@
+.customJumbotron {
+    text-align: center;
+    background-image: url("../../assets/images/library.jpg");
+    background-size: cover;
+    color: white;
+    height: 30vh;
+}
