@@ -2,6 +2,7 @@ import React from 'react';
 import Jumbotron from '../components/Jumbotron';
 import SearchForm from '../components/SearchForm';
 import API from '../utils/API';
+import './style.css'
 
 class Search extends React.Component {
 
@@ -21,6 +22,14 @@ class Search extends React.Component {
 
         }
     }
+
+    saveBook = event => {
+        let index = event.target.getAttribute("data-index");
+        let currentBook = this.state.books[index]
+        API.saveBook(currentBook)
+            .then(() => console.log("Book saved!")          )
+            .catch(err => console.error(err));
+    };
 
     searchBook = query => {
         API.getGooglebooks(query)
@@ -46,12 +55,12 @@ class Search extends React.Component {
             <div>
                 <Jumbotron />
                 <SearchForm
-                    search={this.state.search}
+                    search={this.state.search || ""}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
                 <div className="container card">
-                    {this.state.books.length ? (this.state.books.map(result => (
+                    {this.state.books.length ? (this.state.books.map((result, index) => (
                         <div className="card mb-3" key={result._id}>
                             <div className="row">
                                 <div className="col-md-2">
@@ -59,17 +68,21 @@ class Search extends React.Component {
                                 </div>
                                 <div className="col-md-10">
                                     <div className="card-body">
-                                        <h5 className="card-title">{result.title} by {result.authors}</h5>
-                                        <p className="card-text">{result.description}</p>
-                                        <div>
-                                            <a href={result.link} className="btn btn-primary btn-outline-dark mt-3" target="_blank" rel="noopener noreferrer" >More</a>
-                                            <button href={result.link} className="btn btn-success btn-outline-dark mt-3 ml-3" target="_blank" rel="noopener noreferrer" >Save</button>
+                                        <div className="row">
+                                            <h5 className="card-title col-8">{result.title} by {result.authors}</h5>
+                                            <a href={result.link} className="btn btn-primary btn-outline-dark col-2" target="_blank" rel="noopener noreferrer" >More</a>
+                                            <button data-index={index} onClick={this.saveBook} className="btn btn-success btn-outline-dark col-2 ml-2 customBookButton" target="_blank" rel="noopener noreferrer" >
+                                                Save
+                                            </button>
+                                        </div>
+                                        <div className="row">
+                                            <p className="card-text">{result.description}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    ))) : (<h2 style={{textAlign:"center"}}>Search for a book!</h2>)}
+                    ))) : (<h2 style={{ textAlign: "center" }}>Search for a book!</h2>)}
                 </div>
             </div>
         )
