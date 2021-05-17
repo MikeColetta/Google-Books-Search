@@ -1,9 +1,13 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
+import Jumbotron from '../components/Jumbotron';
 
 function Saved() {
     return (
-        <div className="container my-2" id="about-me">
-            <p>This is the saved page!</p>
+        <div>
+            <Jumbotron />
+            <div className="container my-2" id="about-me">
+                <p>This is the saved page!</p>
+            </div>
         </div>
     )
 }
