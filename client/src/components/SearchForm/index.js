@@ -6,7 +6,7 @@ function SearchForm(props) {
             <div className=" card mb-3">
                 <form className="form-inline">
                     <input
-                        value={props.search}
+                        value={props.value}
                         onChange={props.handleInputChange}
                         name="search"
                         type="text"
