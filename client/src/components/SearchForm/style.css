@@ -1,0 +1,17 @@
+.customInput {
+    width: 95%;
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+}
+
+.bookHeading {
+    margin-left: 1vw;
+}
+
+.customButton {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+    float: right;
+}

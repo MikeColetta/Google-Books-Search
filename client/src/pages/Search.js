@@ -51,7 +51,7 @@ class Search extends React.Component {
                     handleFormSubmit={this.handleFormSubmit}
                 />
                 <div className="container card">
-                    {this.state.books.map(result => (
+                    {this.state.books.length ? (this.state.books.map(result => (
                         <div className="card mb-3" key={result._id}>
                             <div className="row">
                                 <div className="col-md-2">
@@ -69,7 +69,7 @@ class Search extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))) : (<h2 style={{textAlign:"center"}}>Search for a book!</h2>)}
                 </div>
             </div>
         )
