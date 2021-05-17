@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
+import SavedBooks from '../components/SavedBooks';
 
 function Saved() {
     return (
         <div>
             <Jumbotron />
-            <div className="container my-2" id="about-me">
-                <p>This is the saved page!</p>
-            </div>
+            <SavedBooks />
         </div>
     )
 }
