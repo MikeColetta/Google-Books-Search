@@ -19,7 +19,6 @@ class Search extends React.Component {
     getSavedBooks() {
         API.getBooks()
             .then(res => {
-                console.log(res)
                 this.setState({ savedBooks: res.data })
             })
             .catch(err => console.error(err));
