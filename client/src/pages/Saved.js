@@ -15,7 +15,6 @@ class Saved extends React.Component {
     }
 
     deleteBook = event =>{
-        console.log('delete')
         let id = event.target.getAttribute("data-index")
         API.deleteBook(id)
             .then(() => this.componentDidMount())
@@ -25,14 +24,12 @@ class Saved extends React.Component {
     getSavedBooks() {
         API.getBooks()
             .then(res => {
-                console.log(res)
                 this.setState({ savedBooks: res.data })
             })
             .catch(err => console.error(err));
     };
 
     render() {
-        console.log(this.state.savedBooks)
     return (
         <div>
             <Jumbotron />
