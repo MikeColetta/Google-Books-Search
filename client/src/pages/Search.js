@@ -1,8 +1,9 @@
 import React from 'react';
 import Jumbotron from '../components/Jumbotron';
 import SearchForm from '../components/SearchForm';
+import ResultsContainer from '../components/ResultsContainer';
 import API from '../utils/API';
-import './style.css'
+import './style.css';
 
 class Search extends React.Component {
 
@@ -72,33 +73,12 @@ class Search extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <div className="container card customCard">
-                    {this.state.books.length ? (this.state.books.map((result, index) => (
-                        <div className="card mt-2 mb-2" key={result._id}>
-                            <div className="row">
-                                <div className="col-md-2 imageStyle">
-                                    <img alt={result.title} className="img-fluid customImage" src={result.image} />
-                                </div>
-                                <div className="col-md-10">
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <h5 className="card-title col-8">{result.title} by {result.authors}</h5>
-                                        </div>
-                                        <div className="row">
-                                            <p className="card-text">{result.description}</p>
-                                        </div>
-                                        <div className="row buttonRow">   
-                                        <a href={result.link} className="btn btn-primary col-2 customBookButton" target="_blank" rel="noopener noreferrer" >More</a>
-                                            <button data-index={index} onClick={this.saveBook} className="btn btn-success col-2 ml-2 customBookButton">
-                                                {this.state.savedBooks.map(book => book._id).includes(result._id) ? "Saved!" : "Save"}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))) : (<h2 style={{ textAlign: "center" }}>Search for a book!</h2>)}
-                </div>
+                <ResultsContainer 
+                    books={this.state.books}
+                    savedBooks={this.state.savedBooks}
+                    searchBook={this.searchBook}
+                    saveBook={this.saveBook}
+                />
             </div>
         )
     }
