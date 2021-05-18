@@ -3,7 +3,7 @@ import './style.css'
 
 function SearchForm(props) {
     return (
-        <div className="container card mb-3">
+        <div className="container card mb-3 customCard">
             <div className="mt-2 mb-2">
                 <h5 className="mt-1 bookHeading">Book Search</h5>
                 <form className="form-inline">

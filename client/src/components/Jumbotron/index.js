@@ -4,7 +4,7 @@ import './style.css'
 function Jumbotron() {
     return (
         <div>
-            <div className="container card">
+            <div className="container mt-3">
                 <div className="jumbotron customJumbotron">
                     <br></br>
                     <br></br>

@@ -1,0 +1,24 @@
+.customCard {
+    background-color: #DBD4D3;
+    margin-bottom: 30px;
+}
+
+.imageStyle {
+    display: flex;
+    justify-content: center;
+    padding: 10px, 10px, 10px, 10px;
+}
+
+.customImage {
+    width:fit-content;
+    height:fit-content;
+}
+
+.buttonRow {
+    float: left;
+}
+
+.customBookButton {
+    width: fit-content;
+    margin: 10px
+}

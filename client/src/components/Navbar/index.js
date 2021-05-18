@@ -4,7 +4,7 @@ import './style.css'
 
 function Navbar() {
     return (
-<nav className="navbar bg-dark navbar-dark sticky-top navbar-expand-md">
+<nav className="navbar navbar-dark sticky-top navbar-expand-md customNavbar">
 <div className="container-fluid">
     <Link to="/" className="navbar-brand">
         <h1 className="navbar-name">Google Books</h1>

@@ -18,7 +18,7 @@ class Saved extends React.Component {
         console.log('delete')
         let id = event.target.getAttribute("data-index")
         API.deleteBook(id)
-            .then(this.setState(savedBooks))
+            .then(console.log('Book deleted!'))
             .catch(err => console.error(err));
     };
 

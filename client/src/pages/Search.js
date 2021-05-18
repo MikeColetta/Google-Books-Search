@@ -59,24 +59,26 @@ class Search extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <div className="container card">
+                <div className="container card customCard">
                     {this.state.books.length ? (this.state.books.map((result, index) => (
-                        <div className="card mb-3" key={result._id}>
+                        <div className="card mt-2 mb-2" key={result._id}>
                             <div className="row">
-                                <div className="col-md-2">
-                                    <img alt={result.title} className="img-fluid" src={result.image} />
+                                <div className="col-md-2 imageStyle">
+                                    <img alt={result.title} className="img-fluid customImage" src={result.image} />
                                 </div>
                                 <div className="col-md-10">
                                     <div className="card-body">
                                         <div className="row">
                                             <h5 className="card-title col-8">{result.title} by {result.authors}</h5>
-                                            <a href={result.link} className="btn btn-primary btn-outline-dark col-2" target="_blank" rel="noopener noreferrer" >More</a>
-                                            <button data-index={index} onClick={this.saveBook} className="btn btn-success btn-outline-dark col-2 ml-2 customBookButton" target="_blank" rel="noopener noreferrer" >
-                                                Save
-                                            </button>
                                         </div>
                                         <div className="row">
                                             <p className="card-text">{result.description}</p>
+                                        </div>
+                                        <div className="row buttonRow">   
+                                        <a href={result.link} className="btn btn-primary col-2 customBookButton" target="_blank" rel="noopener noreferrer" >More</a>
+                                            <button data-index={index} onClick={this.saveBook} className="btn btn-success col-2 ml-2 customBookButton">
+                                                Save
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
