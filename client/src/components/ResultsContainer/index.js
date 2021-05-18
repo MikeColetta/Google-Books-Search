@@ -3,6 +3,8 @@ import React from "react";
 function ResultsContainer({books, savedBooks, saveBook,}) {        
     return (
         <div className="container card customCard">
+                    <h5 className="bookHeading mt-1">Results</h5>
+
                     {books.length ? (books.map((result, index) => (
                         <div className="card mt-2 mb-2" key={result._id}>
                             <div className="row">

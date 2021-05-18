@@ -4,6 +4,8 @@ import './style.css'
 function SavedBooks({ books, deleteBook }) {
     return (
         <div className="container card customCard">
+            <h5 className="bookHeading mt-1">Saved Books</h5>
+
             {books.length ? (books.map((result, index) => (
                 <div className="card mt-2 mb-2" key={result._id}>
                     <div className="row">

@@ -36,7 +36,6 @@ class Saved extends React.Component {
             <SavedBooks 
                 books = {this.state.savedBooks}
                 deleteBook = {this.deleteBook}
-
             />
         </div>
     )
