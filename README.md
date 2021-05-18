@@ -4,7 +4,7 @@
 
 ## Project Description
 
-I created a Google Books Search app that uses React and the Google Books API that allows users to search and save books.
+I created a Google Books Search app that uses React and the Google Books API. Users can search for books and save them to the database.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -14,12 +14,12 @@ I created a Google Books Search app that uses React and the Google Books API tha
 5. [Credits](#credits)
 
 ## Installation
-[Deployed Link]()
+[Deployed Link](https://coletta-react-google-books.herokuapp.com/)
 
 ## Usage
 
-![Screenshot 1]()
-![Screenshot 2]()
+![Screenshot 1](./client/src/assets/images/Screenshot1.JPG)
+![Screenshot 2](./client/src/assets/images/Screenshot2.JPG)
 
 ## License
     
