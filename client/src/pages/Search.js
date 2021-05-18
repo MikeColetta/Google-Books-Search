@@ -8,8 +8,22 @@ class Search extends React.Component {
 
     state = {
         value: "",
-        books: []
+        books: [],
+        savedBooks: [],
     }
+
+    componentDidMount() {
+        this.getSavedBooks();
+    }
+
+    getSavedBooks() {
+        API.getBooks()
+            .then(res => {
+                console.log(res)
+                this.setState({ savedBooks: res.data })
+            })
+            .catch(err => console.error(err));
+    };
 
     createBook = bookData => {
         return {
@@ -27,7 +41,7 @@ class Search extends React.Component {
         let index = event.target.getAttribute("data-index");
         let currentBook = this.state.books[index]
         API.saveBook(currentBook)
-            .then(() => console.log("Book saved!")          )
+            .then(() => this.componentDidMount())
             .catch(err => console.error(err));
     };
 
@@ -77,7 +91,7 @@ class Search extends React.Component {
                                         <div className="row buttonRow">   
                                         <a href={result.link} className="btn btn-primary col-2 customBookButton" target="_blank" rel="noopener noreferrer" >More</a>
                                             <button data-index={index} onClick={this.saveBook} className="btn btn-success col-2 ml-2 customBookButton">
-                                                Save
+                                                {this.state.savedBooks.map(book => book._id).includes(result._id) ? "Saved!" : "Save"}
                                             </button>
                                         </div>
                                     </div>
