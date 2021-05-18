@@ -30,7 +30,7 @@ class Search extends React.Component {
             _id: bookData.id,
             authors: bookData.volumeInfo.authors,
             description: bookData.volumeInfo.description,
-            image: bookData.volumeInfo.imageLinks.thumbnail,
+            image: bookData.volumeInfo.imageLinks === undefined ? "" : bookData.volumeInfo.imageLinks.thumbnail,
             link: bookData.volumeInfo.previewLink,
             title: bookData.volumeInfo.title,
 
@@ -47,7 +47,8 @@ class Search extends React.Component {
 
     searchBook = query => {
         API.getGooglebooks(query)
-            .then(res => this.setState({ books: res.data.items.map(bookData => this.createBook(bookData)) }))
+            .then(
+                res => this.setState({ books: res.data.items.map(bookData => this.createBook(bookData)) }))
             .catch(err => console.error(err));
     };
 
