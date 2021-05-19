@@ -30,7 +30,7 @@ class Search extends React.Component {
             _id: bookData.id,
             authors: bookData.volumeInfo.authors,
             description: bookData.volumeInfo.description,
-            image: bookData.volumeInfo.imageLinks === undefined ? "" : bookData.volumeInfo.imageLinks.thumbnail,
+            image: bookData.volumeInfo.imageLinks === undefined ? "https://i.ibb.co/c1DZG9d/unnamed.jpg" : bookData.volumeInfo.imageLinks.thumbnail,
             link: bookData.volumeInfo.previewLink,
             title: bookData.volumeInfo.title,
 
