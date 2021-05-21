@@ -28,7 +28,7 @@ class Search extends React.Component {
     createBook = bookData => {
         return {
             _id: bookData.id,
-            authors: bookData.volumeInfo.authors,
+            authors: bookData.volumeInfo.authors.join(", "),
             description: bookData.volumeInfo.description,
             image: bookData.volumeInfo.imageLinks === undefined ? "https://i.ibb.co/c1DZG9d/unnamed.jpg" : bookData.volumeInfo.imageLinks.thumbnail,
             link: bookData.volumeInfo.previewLink,
