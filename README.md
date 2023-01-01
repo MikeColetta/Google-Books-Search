@@ -4,7 +4,7 @@
 
 ## Project Description
 
-I created a Google Books Search app that uses React and the Google Books API. Users can search for books and save them to the database.
+I created a MERN stack Google Books Search app that uses React and the Google Books API. Users can search for books and save them to the database.
 
 ## Table of Contents
 1. [Installation](#installation)
