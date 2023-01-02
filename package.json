@@ -9,8 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "build": "cd client && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +23,10 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.12.9",
     "react-router-dom": "^5.2.0"
+  },
+  "overrides": {
+    "glob-parent": "6.0.2",
+    "got": "12.5.3",
+    "yargs-parser": "21.1.1"
   }
 }
